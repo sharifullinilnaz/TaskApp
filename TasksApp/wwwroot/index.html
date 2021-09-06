@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="table">
+                <div class="table__headers">
+                    <div class="table__headers_item">
+                        Название задания
+                    </div>
+                    <div class="table__headers_item">
+                        Описание
+                    </div>
+                    <div class="table__headers_item">
+                        Статус
+                    </div>
+                </div>
+
+                <div class="table__items" id="tasks">
+
+                </div>
+                <div class="button_items">
+                    <button class="button_item" id="modal_open">Добавить</button>
+                    <button class="button_item" disabled id="modal_edit">Редактировать</button>
+                    <button class="button_item" disabled id="modal_delete" onclick="deleteTask()">Удалить</button>
+                </div>
+            </div>
+
+            <div class="modal" id="modal">
+                <div class="modal__content">
+                    <h1>Добавление</h1>               
+                    <input type="text" id="task_add_name" placeholder="Название">
+                    <textarea name="Описание" id="task_add_description" cols="30" rows="10"></textarea>
+                    <select name="статус" id="status_option_items" value="статус">
+                        <option value="" disabled selected>укажите статус</option>
+                    </select>
+                    <div class="modal__content_buttons">
+                        <button class="modal__content_button_add" onclick="createTask()" >Добавить</button>
+                        <button class="modal__content_button_cancel">Отмена</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="modal_editing">
+                <div class="modal__content_editing">
+                    <h1>Редактирование</h1>
+                    <input type="text" id="task_update_name" placeholder="Название">
+                    <textarea name="Описание" id="task_update_description" cols="30" rows="10" placeholder="описание"></textarea>
+                    <select name="статус" id="status_option_items_update" value="статус">
+                        <option value="" disabled selected>укажите статус</option>
+                    </select>
+                    <div class="modal__content_buttons">
+                        <button class="modal__content_button_add" onclick="updateTask()">Редактировать</button>
+                        <button class="modal__content_button_cancel_edit">Отмена</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="js/script.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getTasks();
+        getStatuses();
+    </script>
+</body>
+</html>

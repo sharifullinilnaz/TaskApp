@@ -1,0 +1,97 @@
+﻿.wrapper {
+    display: grid;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.table {
+}
+
+.table__headers {
+    display: grid;
+    grid-template-columns: minmax(200px, 400px) minmax(200px, 400px) minmax(200px, 400px);
+    grid-template-rows: 40px;
+    border: 2px solid #000;
+}
+
+.table__headers_item {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__items {
+}
+
+.table__item {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: minmax(200px, 400px) minmax(200px, 400px) minmax(200px, 400px);
+    grid-template-rows: 40px;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.table__item_name, .table__item_description, .table__item_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_items {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal {
+    display: none;
+}
+
+    .modal.modal__open {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+.modal__content, .modal__content_editing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background-color: seashell;
+    border-radius: 15px;
+}
+
+
+
+input {
+    margin-top: 20px;
+}
+
+textarea {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 20px;
+}
+
+select {
+    margin-top: 20px;
+}
